@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="sidebar" data-background-color="dark" th:fragment="sidebar">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a th:href="@{/index}" class="logo">
+              <img
+                src="img/kaiadmin/logo_light.svg"
+                alt="navbar brand"
+                class="navbar-brand"
+                height="20"
+              />
+            </a>
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                	<i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Admnistración</h4>
+              </li>
+              <li class="nav-item active">
+              	<a href="/usuarios">
+              		<i class="fas fa-user"></i>
+              		<span>Usuarios</span>
+              	</a>
+              </li>
+              <li class="nav-item">
+              	<a href="/roles">
+              		<i class="fas fa-users"></i>
+              		<span>Roles</span>
+              	</a>
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Mi Entorno</h4>
+              </li>
+              <li class="nav-item">
+              	<a href="/proyectos">
+              		<i class="fas fa-folder-open"></i>
+              		<span>Proyectos</span>
+              	</a>
+              </li>
+              <li class="nav-item">
+              	<a href="/tareas">
+              		<i class="fas fa-tasks"></i>
+              		<span>Tareas</span>
+              	</a>
+              </li>
+              <li class="nav-item">
+              	<a href="/comentarios">
+              		<i class="fas fa-comments"></i>
+              		<span>Comentarios</span>
+              	</a>
+              </li>
+              <li class="nav-item">
+              	<a href="/asignaciones">
+              		<i class="fas fa-project-diagram"></i>
+              		<span>Tareas Asignadas</span>
+              	</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

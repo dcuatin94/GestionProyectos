@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{index}">
+	<head th:replace="fragments/head :: header">
+		<title>Projects Manager</title>
+	</head>
+	<body >
+		<div layout:fragment="page-title">Usuarios</div>
+		<div layout:fragment="contenido">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="d-flex align-items-center">
+								<a class="btn btn-primary btn-round ms-auto" href="/usuario"><i class="fa fa-plus"></i> Agregar</a>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="tbl-usuarios" class="display table table-striped table-hover">
+									<thead>
+										<tr>
+											<th>Nombre</th>
+											<th>Apellido</th>
+											<th>Username</th>
+											<th>Email</th>
+											<th>Rol</th>
+											<th>Fecha Creacion</th>
+											<th>Accion</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="usuario : ${usuarios}">
+											<td th:text="${usuario.nombre}"></td>
+											<td th:text="${usuario.apellido}"></td>
+											<td th:text="${usuario.username}"></td>
+											<td th:text="${usuario.email}"></td>
+											<td th:text="${usuario.rol.nombre}"></td>
+											<td th:text="${usuario.fechaCreation}"></td>
+											<td>
+												<div class="form-button-action">
+				                                	<button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+				                                  		<i class="fa fa-edit"></i>
+				                                	</button>
+				                                	<button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+				                                  		<i class="fa fa-times"></i>
+				                                	</button>
+				                              </div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" layout:fragment="codejs">
+			$(document).ready(function(){
+				$("#tbl-usuarios").DataTable();			
+			});
+		</script>
+	</body>
+</html>

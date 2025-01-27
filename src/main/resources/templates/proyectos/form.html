@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{index}">
+	<head th:replace="fragments/head :: header">
+		<title>Projects Manager</title>
+	</head>
+	<body >
+		<div layout:fragment="page-title">Agregar Proyecto</div>
+		<div layout:fragment="contenido">
+			<div class="row">
+				<div class="col-md-12">
+					<form action="/proyecto" method="post" th:object="${proyecto}">
+						<div class="card">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-6 col-lg-4">
+										<div class="form-group">
+											<label for="nombre">Tema</label>
+											<input id="nombre" class="form-control" placeholder="Nombre" type="text" name="nombre" required>
+										</div>
+										<div class="form-group">
+											<label for="descripcion">Descripcion</label>
+											<textarea id="descripcion" class="form-control" aria-label="Descripcion..." name="descripcion" required></textarea>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-4">
+										<div class="form-group">
+											<label for="fechaInicio">Fecha Inicio</label>
+											<input id="fechaInicio" class="form-control" placeholder="Fecha Inicio" type="date" name="fechaInicio" required>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-4">										
+										<div class="form-group">
+											<label for="fechaFin">Fecha Fin</label>
+											<input id="fechaFin" class="form-control" placeholder="Fecha Fin" type="date" name="fechaFin" required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn btn-success" type="submit">Guardar</button>
+								<a class="btn btn-danger" href="/proyectos">Cancelar</a>
+							</div>
+							
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

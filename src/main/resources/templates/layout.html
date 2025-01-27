@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="fragments/head :: header">
+<title>index page</title>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- Sidebar -->
+		<div th:replace="fragments/sidebar :: sidebar"></div>
+		<!-- End Sidebar -->
+		<div class="main-panel">
+			<!-- Logo Header -->
+			<div th:replace="fragments/main_header :: main_header"></div>
+			<!-- End Navbar -->
+			<div class="container">
+				<div class="page-inner">
+					<!--  
+					<div th:replace="fragments/page_header :: page_header"></div> 
+					-->
+					<div class="page-header">
+						<h4 class="page-title" layout:fragment="page-title">Dashboard</h4>
+					</div>
+					<div class="page-category" layout:fragment="contenido">
+						Inner page content goes here
+					</div>
+				</div>
+			</div>
+			<footer th:replace="fragments/footer :: footer"></footer>
+		</div>
+	</div>
+	<div th:replace="fragments/scripts :: scripts"></div>
+	<script type="text/javascript" layout:fragment="codejs"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{index}">
+	<head th:replace="fragments/head :: header">
+		<title>Projects Manager</title>
+	</head>
+	<body >
+		<div layout:fragment="page-title">Agregar Usuario</div>
+		<div layout:fragment="contenido">
+			<div class="row">
+				<div class="col-md-12">
+					<form action="/usuario" method="post" th:object="${usuario}">
+						<div class="card">
+							<div class="card-body">
+								<div class="row">
+									<div class="col-md-6 col-lg-4">
+										<div class="form-group">
+											<label for="nombre">Nombre</label>
+											<input id="nombre" class="form-control" placeholder="Nombre" type="text" name="nombre" required>
+										</div>
+										<div class="form-group">
+											<label for="username">Username</label>
+											<input id="username" class="form-control" placeholder="Username" type="text" name="username" required>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-4">
+										<div class="form-group">
+											<label for="apellido">Apellido</label>
+											<input id="apellido" class="form-control" placeholder="Apellido" type="text" name="apellido" required>
+										</div>
+										<div class="form-group">
+											<label for="password">Password</label>
+											<input id="password" class="form-control" placeholder="Password" type="password" name="password" required>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-4">
+										<div class="form-group">
+											<label for="email">Email</label>
+											<input id="email" class="form-control" placeholder="Email" type="email" name="email" required>
+										</div>
+										<div class="form-group">
+											<label for="rol">Rol</label>
+											<select id="rol" class="form-select" th:field="*{rol}">
+												<option th:each="rol : ${roles}" th:value="${rol.idRol}" th:text="${rol.nombre}"> </option>
+											</select>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="card-action">
+								<button class="btn btn-success" type="submit">Guardar</button>
+								<a class="btn btn-danger" href="/usuarios">Cancelar</a>
+							</div>
+							
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

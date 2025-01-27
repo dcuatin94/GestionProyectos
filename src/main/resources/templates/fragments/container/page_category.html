@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container" th:replace="container">
+          <div class="page-inner">
+            <div th:replace="page_header :: page_header">
+              
+            </div>
+            <div class="page-category" layout:fragment="content">
+            	Inner page content goes here
+            </div>
+          </div>
+        </div>
+</body>
+</html>

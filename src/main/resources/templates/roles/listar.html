@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{index}">
+	<head th:replace="fragments/head :: header">
+		<title>Projects Manager</title>
+	</head>
+	<body >
+		<div layout:fragment="page-title">Roles</div>
+		<div layout:fragment="contenido">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="card">
+						<div class="card-header">
+							<div class="d-flex align-items-center" th:replace="roles/form :: formulario-rol"></div>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table id="tbl-roles" class="display table table-striped table-hover">
+									<thead>
+										<tr>
+											<th>Id</th>
+											<th>Nombre</th>		
+											<th>Estado</th>
+											<th>Acciones</th>									
+										</tr>
+									</thead>
+									<tbody>
+										<tr th:each="rol : ${roles}">
+											<td th:text="${rol.idRol}"></td>
+											<td th:text="${rol.nombre}"></td>
+											<td th:text="${rol.estadoRegistro}"></td>
+											<td>
+												<div class="form-button-action">
+				                                	<button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
+				                                  		<i class="fa fa-edit"></i>
+				                                	</button>
+				                                	<button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+				                                  		<i class="fa fa-times"></i>
+				                                	</button>
+				                              </div>
+											</td>											
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" layout:fragment="codejs">
+			$(document).ready(function(){
+				$("#tbl-roles").DataTable();			
+			});
+		</script>
+	</body>
+</html>
