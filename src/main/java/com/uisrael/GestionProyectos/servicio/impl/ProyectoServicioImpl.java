@@ -21,12 +21,13 @@ public class ProyectoServicioImpl implements ProyectoServicio{
 			proyectoRepositio.save(proyecto);			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			throw new RuntimeException("Error al guardar el proyecto:" + e.getMessage());
 		}		
 	}
 
 	@Override
 	public List<Proyecto> listarProyectos() {
-		return proyectoRepositio.findAll();
+		return proyectoRepositio.findByEstadoRegistro(true);
 	}
 
 	@Override
@@ -45,6 +46,12 @@ public class ProyectoServicioImpl implements ProyectoServicio{
 	public List<Proyecto> mostrarProyectosNoFinalizados() {
 		// TODO Auto-generated method stub
 		return proyectoRepositio.mostrarProyectosNoFinalizados();
+	}
+
+	@Override
+	public Proyecto buscarProyectoPorId(int id) {
+		// TODO Auto-generated method stub
+		return proyectoRepositio.findById(id).get();
 	}
 	
 }

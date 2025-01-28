@@ -40,19 +40,7 @@ public class GestionProyectosControlador {
 		return "/usuarios/listar";
 	}
 	
-	@GetMapping("/usuarios")
-	public String Usuarios(Model model) {
-		
-		model.addAttribute("usuarios", usuarioServicio.listarUsuarios());
-		return "/usuarios/listar";
-	}
 	
-	@GetMapping("/usuario")
-	public String Usuario(Model model) {
-		model.addAttribute("roles", rolServicio.listarRoles());
-		model.addAttribute("usuario", new Usuario());
-		return "/usuarios/form";
-	}
 	
 	@GetMapping("/roles")
 	public String Roles(Model model) {
@@ -61,17 +49,7 @@ public class GestionProyectosControlador {
 		return "/roles/listar";
 	}
 	
-	@GetMapping("/proyecto")
-	public String Proyecto(Model model) {
-		model.addAttribute("proyecto", new Proyecto());
-		return "/proyectos/form";
-	}
 	
-	@GetMapping("/proyectos")
-	public String Proyectos(Model model) {
-		model.addAttribute("proyectos", proyectoServicio.listarProyectos());
-		return "/proyectos/listar";
-	}
 	
 	@GetMapping("/tarea")
 	public String Tarea(Model model) {

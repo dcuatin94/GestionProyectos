@@ -47,4 +47,10 @@ public class UsuarioServicioImpl implements UsuarioServicio{
 		return usuarioRepositorio.buscarUsuariosActivos();
 	}
 
+	@Override
+	public Usuario buscarUsuarioPorId(int idUsuario) {
+		// TODO Auto-generated method stub
+		return usuarioRepositorio.findById(idUsuario).get();
+	}
+
 }

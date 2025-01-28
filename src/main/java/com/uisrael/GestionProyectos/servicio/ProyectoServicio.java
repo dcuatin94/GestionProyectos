@@ -7,6 +7,7 @@ import com.uisrael.GestionProyectos.modelo.Proyecto;
 
 public interface ProyectoServicio {
 	public void insertarProyecto(Proyecto proyecto);
+	public Proyecto buscarProyectoPorId(int id);
 	public List<Proyecto> listarProyectos();
 	public List<Proyecto> buscarProyectosQueIniciaronEntre(LocalDate startDate, LocalDate endDate);
 	public List<Proyecto> buscarProyectosPorAnio(int anio);

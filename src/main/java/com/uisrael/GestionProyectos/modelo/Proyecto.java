@@ -5,6 +5,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -30,10 +32,12 @@ public class Proyecto implements Serializable{
 	private String nombre;
 	@Column(length = 255, nullable = true)
 	private String descripcion;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaInicio;
 	@Column(nullable = true)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fechaFin;
-	private boolean estadoRegistro;
+	private boolean estadoRegistro = true;
 	
 	@OneToMany(mappedBy = "proyecto")
 	private List<Tarea> tareas = new ArrayList<>();

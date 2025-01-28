@@ -18,4 +18,6 @@ public interface ProyectosRepositorio extends JpaRepository<Proyecto, Integer>{
 	
 	@Query("Select p from Proyecto p Where p.fechaFin is null")
 	public List<Proyecto> mostrarProyectosNoFinalizados();
+	
+	public List<Proyecto> findByEstadoRegistro(boolean estadoRegistro);
 }

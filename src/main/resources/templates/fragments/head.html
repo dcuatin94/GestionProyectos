@@ -9,12 +9,12 @@
     />
     <link
       rel="icon"
-      href="img/kaiadmin/favicon.ico"
+      th:href="@{/img/kaiadmin/favicon.ico}"
       type="image/x-icon"
     />
 
     <!-- Fonts and icons -->
-    <script src="js/plugin/webfont/webfont.min.js"></script>
+    <script th:src="@{/js/plugin/webfont/webfont.min.js}"></script>
     <script>
       WebFont.load({
         google: { families: ["Public Sans:300,400,500,600,700"] },
@@ -34,12 +34,10 @@
     </script>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/plugins.min.css" />
-    <link rel="stylesheet" href="css/kaiadmin.min.css" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/plugins.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/kaiadmin.min.css}" />
 
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link rel="stylesheet" href="css/demo.css" />
   </head>
 <body>
 

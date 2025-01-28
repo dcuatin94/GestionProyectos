@@ -8,32 +8,39 @@
 		<div layout:fragment="contenido">
 			<div class="row">
 				<div class="col-md-12">
-					<form action="/proyecto" method="post" th:object="${proyecto}">
+					<form th:action="@{/proyecto/guardar}" method="post" th:object="${proyecto}">
 						<div class="card">
 							<div class="card-body">
 								<div class="row">
 									<div class="col-md-6 col-lg-4">
 										<div class="form-group">
 											<label for="nombre">Tema</label>
-											<input id="nombre" class="form-control" placeholder="Nombre" type="text" name="nombre" required>
+											<input id="nombre" class="form-control" placeholder="Nombre" type="text" name="nombre" th:field="*{nombre}" required>
 										</div>
 										<div class="form-group">
 											<label for="descripcion">Descripcion</label>
-											<textarea id="descripcion" class="form-control" aria-label="Descripcion..." name="descripcion" required></textarea>
+											<textarea id="descripcion" class="form-control" aria-label="Descripcion..." name="descripcion" th:field="*{descripcion}" required></textarea>
 										</div>
 									</div>
 									<div class="col-md-6 col-lg-4">
 										<div class="form-group">
 											<label for="fechaInicio">Fecha Inicio</label>
-											<input id="fechaInicio" class="form-control" placeholder="Fecha Inicio" type="date" name="fechaInicio" required>
+											<input id="fechaInicio" class="form-control" placeholder="Fecha Inicio" type="date" name="fechaInicio"  th:field="*{fechaInicio}" th:value="${#temporals.format(fechaInicio, 'dd/MM/yyyy')}"  required>
+										</div>
+										<div class="form-group">
+											<label for="rol">Usuarios</label>
+											<select id="rol" class="form-select" th:field="*{usuario}">
+												<option th:each="item : ${usuarios}" th:value="${item.idUsuario}" th:text="${item.nombre} + ' ' +${item.apellido}"> </option>
+											</select>
 										</div>
 									</div>
 									<div class="col-md-6 col-lg-4">										
 										<div class="form-group">
 											<label for="fechaFin">Fecha Fin</label>
-											<input id="fechaFin" class="form-control" placeholder="Fecha Fin" type="date" name="fechaFin" required>
+											<input id="fechaFin" class="form-control" placeholder="Fecha Fin" type="date" name="fechaFin" th:field="*{fechaFin}" required>
 										</div>
 									</div>
+									<input type="hidden" th:field="*{idProyecto}">
 								</div>
 							</div>
 							<div class="card-action">
