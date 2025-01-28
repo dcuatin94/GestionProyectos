@@ -46,4 +46,10 @@ public class RolServicioImpl implements RolServicio{
 		return rolRepositorio.buscarRolesQueTerminenCon(sufijo);
 	}
 
+	@Override
+	public Rol buscarPorId(int idRol) {
+		
+		return rolRepositorio.findById(idRol).get();
+	}
+
 }

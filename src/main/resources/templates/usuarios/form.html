@@ -8,40 +8,41 @@
 		<div layout:fragment="contenido">
 			<div class="row">
 				<div class="col-md-12">
-					<form action="/usuario" method="post" th:object="${usuario}">
+					<form th:action="@{/usuario}" method="post" th:object="${usuario}">
 						<div class="card">
 							<div class="card-body">
 								<div class="row">
 									<div class="col-md-6 col-lg-4">
 										<div class="form-group">
 											<label for="nombre">Nombre</label>
-											<input id="nombre" class="form-control" placeholder="Nombre" type="text" name="nombre" required>
+											<input id="nombre" class="form-control" placeholder="Nombre" type="text" name="nombre" th:field="*{nombre}" required>
 										</div>
 										<div class="form-group">
 											<label for="username">Username</label>
-											<input id="username" class="form-control" placeholder="Username" type="text" name="username" required>
+											<input id="username" class="form-control" placeholder="Username" type="text" name="username" th:field="*{username}" required>
 										</div>
 									</div>
 									<div class="col-md-6 col-lg-4">
 										<div class="form-group">
 											<label for="apellido">Apellido</label>
-											<input id="apellido" class="form-control" placeholder="Apellido" type="text" name="apellido" required>
+											<input id="apellido" class="form-control" placeholder="Apellido" type="text" name="apellido" th:field="*{apellido}" required>
 										</div>
 										<div class="form-group">
 											<label for="password">Password</label>
-											<input id="password" class="form-control" placeholder="Password" type="password" name="password" required>
+											<input id="password" class="form-control" placeholder="Password" type="password" name="password" th:field="*{password}" required>
 										</div>
 									</div>
 									<div class="col-md-6 col-lg-4">
 										<div class="form-group">
 											<label for="email">Email</label>
-											<input id="email" class="form-control" placeholder="Email" type="email" name="email" required>
+											<input id="email" class="form-control" placeholder="Email" type="email" name="email" th:field="*{email}" required>
 										</div>
-										<div class="form-group">
+										<div class="form-group" th:if="!${#lists.isEmpty(roles)}">
+											
 											<label for="rol">Rol</label>
-											<select id="rol" class="form-select" th:field="*{rol}">
+											<select id="rol" class="form-select" th:field="*{rol}" >
 												<option th:each="rol : ${roles}" th:value="${rol.idRol}" th:text="${rol.nombre}"> </option>
-											</select>
+											</select>											 
 										</div>
 										
 									</div>

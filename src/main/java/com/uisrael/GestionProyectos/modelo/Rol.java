@@ -25,7 +25,7 @@ public class Rol implements Serializable{
 	private int idRol;
 	@Column(length = 100)
 	private String nombre;
-	private boolean estadoRegistro;
+	private boolean estadoRegistro = true;
 	
 	@OneToMany(mappedBy = "rol", cascade = CascadeType.REFRESH)
 	private List<Usuario> usuarios = new ArrayList<>();

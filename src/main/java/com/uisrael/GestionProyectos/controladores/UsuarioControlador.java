@@ -1,6 +1,7 @@
 package com.uisrael.GestionProyectos.controladores;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.uisrael.GestionProyectos.modelo.Proyecto;
+import com.uisrael.GestionProyectos.modelo.Rol;
 import com.uisrael.GestionProyectos.modelo.Usuario;
 import com.uisrael.GestionProyectos.servicio.RolServicio;
 import com.uisrael.GestionProyectos.servicio.UsuarioServicio;
@@ -27,8 +28,8 @@ public class UsuarioControlador implements Serializable{
 	
 	@GetMapping("/usuario")
 	public String CrearUsuario(Model model) {
-		model.addAttribute("roles", rolServicio.listarRoles());
 		model.addAttribute("usuario", new Usuario());
+		model.addAttribute("roles", rolServicio.listarRoles());
 		return "/usuarios/form";
 	}
 	

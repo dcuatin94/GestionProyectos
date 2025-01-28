@@ -5,12 +5,17 @@
 	</head>
 	<body >
 		<div th:fragment="formulario-rol">
-			<form class="row col" action="/rol" method="post" th:object="${rol}" >
+			<form class="row col" th:action="@{/rol/guardar}" method="post" th:object="${rol}" >
 				<div class="col">
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-text">Nombre del Rol</span>
-							<input id="nombre" class="form-control" placeholder="Nombre del Rol" type="text" name="nombre" required>
+							<input id="nombre" class="form-control" placeholder="Nombre del Rol" type="text" name="nombre" th:field="*{nombre}" required>
+							<div class="col p-3">
+								<input id="estado" class="form-check-input" type="checkbox" th:field="*{estadoRegistro}"/>
+								<label for="estado" class="form-check-label">Activo</label>
+								<input type="hidden" th:field="*{idRol}"/>
+							</div>
 							<button class="btn btn-success" type="submit">Agregar</button>		
 						</div>
 					</div>										

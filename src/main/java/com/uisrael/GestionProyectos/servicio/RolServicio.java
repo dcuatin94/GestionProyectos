@@ -5,6 +5,7 @@ import com.uisrael.GestionProyectos.modelo.Rol;
 
 public interface RolServicio {
 	public void insertarRol(Rol rol);
+	public Rol buscarPorId(int idRol);
 	public List<Rol> listarRoles();
 	public List<Rol> ordenarRolesPorNombre();
 	public List<Rol> buscarRolesQueEmpieceCon(String prefijo);
