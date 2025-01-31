@@ -19,18 +19,7 @@ public class GestionProyectosControlador {
 	
 	
 	
-//	@GetMapping("/tarea")
-//	public String Tarea(Model model) {
-//		model.addAttribute("tarea", new Tarea());
-//		model.addAttribute("proyectos", proyectoServicio.listarProyectos());
-//		model.addAttribute("usuarios", usuarioServicio.listarUsuarios());
-//		return "/tareas/form";
-//	}
-//	
-//	@GetMapping("/tareas")
-//	public String Tareas(Model model) {
-//		model.addAttribute("tareas", tareaServicio.listarTareas());
-//		return "/tareas/listar";
+
 //	}
 //	
 //	@GetMapping("/comentarios")

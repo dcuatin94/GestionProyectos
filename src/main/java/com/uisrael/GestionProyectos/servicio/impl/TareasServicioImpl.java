@@ -51,5 +51,10 @@ public class TareasServicioImpl implements TareaServicio{
 		return tareaRepositorio.buscarTareasPorAnioMes(anio, mes);
 	}
 
+	@Override
+	public Tarea buscarTareaPorId(int idTarea) {
+		return tareaRepositorio.findById(idTarea).get();
+	}
+
 
 }

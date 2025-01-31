@@ -26,7 +26,7 @@ public class UsuarioServicioImpl implements UsuarioServicio{
 
 	@Override
 	public List<Usuario> listarUsuarios() {
-		return usuarioRepositorio.findAll();
+		return usuarioRepositorio.findByEstadoRegistro(true);
 	}
 
 	@Override

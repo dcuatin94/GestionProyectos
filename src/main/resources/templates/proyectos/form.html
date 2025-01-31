@@ -29,7 +29,7 @@
 										</div>
 										<div class="form-group">
 											<label for="rol">Usuarios</label>
-											<select id="rol" class="form-select" th:field="*{usuario}">
+											<select id="rol" class="form-select" th:field="*{usuario.idUsuario}">
 												<option th:each="item : ${usuarios}" th:value="${item.idUsuario}" th:text="${item.nombre} + ' ' +${item.apellido}"> </option>
 											</select>
 										</div>

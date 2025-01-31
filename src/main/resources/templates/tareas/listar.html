@@ -11,7 +11,7 @@
 					<div class="card">
 						<div class="card-header">
 							<div class="d-flex align-items-center">
-								<a class="btn btn-primary btn-round ms-auto" href="/tarea"><i class="fa fa-plus"></i> Agregar</a>
+								<a class="btn btn-primary btn-round ms-auto" th:href="@{/tarea}"><i class="fa fa-plus"></i> Agregar</a>
 							</div>
 						</div>
 						<div class="card-body">
@@ -36,17 +36,23 @@
 											<td th:text="${tarea.fechaCreacion}"></td>
 											<td th:text="${tarea.fechaVencimiento}"></td>
 											<td th:text="${tarea.estadoRegistro}"></td>
-											<td>
-												<div class="form-button-action">
-				                                	<button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task">
-				                                  		<i class="fa fa-edit"></i>
-				                                	</button>
-				                                	<button type="button" data-bs-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
-				                                  		<i class="fa fa-times"></i>
-				                                	</button>
-				                              </div>
-											</td>
-										</tr>
+										<td>
+											<div class="form-button-action">
+												<a th:href="@{/tarea/editar/}+${tarea.idTarea}"
+													type="button" data-bs-toggle="tooltip" title=""
+													class="btn btn-link btn-primary btn-lg"
+													data-original-title="Edit Task"> <i class="fa fa-edit"></i>
+												</a> 
+												<a th:href="@{/tarea/eliminar/}+${tarea.idTarea}"
+													type="button"
+													onclick="return confirm('Estas seguro que deseas eliminar registro?')"
+													data-bs-toggle="tooltip" title=""
+													class="btn btn-link btn-danger"
+													data-original-title="Remove"> <i class="fa fa-times"></i>
+												</a>
+											</div>
+										</td>
+									</tr>
 									</tbody>
 								</table>
 							</div>

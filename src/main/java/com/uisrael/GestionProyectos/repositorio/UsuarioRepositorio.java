@@ -17,4 +17,6 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, Integer>{
 	
 	@Query("select u from Usuario u WHERE u.estadoRegistro=true")
 	public List<Usuario> buscarUsuariosActivos();
+	
+	public List<Usuario> findByEstadoRegistro(boolean estadoRegistro);;
 }

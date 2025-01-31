@@ -37,6 +37,7 @@ public class Usuario implements Serializable{
 	private String password;
 	@Column(length = 255)
 	private String email;
+	@Column(updatable = false)
 	private LocalDateTime fechaCreation;
 	private boolean estadoRegistro = true;
 	

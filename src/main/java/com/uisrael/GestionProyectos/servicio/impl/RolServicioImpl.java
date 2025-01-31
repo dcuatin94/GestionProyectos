@@ -25,7 +25,7 @@ public class RolServicioImpl implements RolServicio{
 
 	@Override
 	public List<Rol> listarRoles() {
-		return rolRepositorio.findAll();
+		return rolRepositorio.findByEstadoRegistro(true);
 	}
 
 	@Override

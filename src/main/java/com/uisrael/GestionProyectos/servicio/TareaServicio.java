@@ -11,4 +11,5 @@ public interface TareaServicio {
 	public List<Tarea> listarTareasAntesDe(LocalDateTime beforeDate);
 	public List<Tarea> listarTareasDespuesDe(LocalDateTime afterDate);
 	public List<Tarea> buscarTareasPorAnioMes(int anio, int mes);
+	public Tarea buscarTareaPorId(int idTarea);
 }

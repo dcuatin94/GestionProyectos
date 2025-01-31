@@ -17,4 +17,6 @@ public interface RolRepositorio extends JpaRepository<Rol, Integer> {
 	
 	@Query("Select r from Rol r Where r.nombre LIKE %:sufijo")
 	public List<Rol> buscarRolesQueTerminenCon(@Param("sufijo")String sufijo);
+	
+	public List<Rol> findByEstadoRegistro(boolean estadoRegistro);
 }
